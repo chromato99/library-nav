@@ -6,7 +6,7 @@ var parseurl = require('parseurl');
 var flash = require('connect-flash');
 
 const app = express();
-const port = 8080
+const port = 80
 
 app.use(helmet());
 app.use(compression());
