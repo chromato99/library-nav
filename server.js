@@ -1,18 +1,13 @@
 const express = require('express');
 const compression = require('compression');
 const front = require('./lib/front.js');
-var helmet = require('helmet');
 var parseurl = require('parseurl');
-var flash = require('connect-flash');
 
 const app = express();
 const port = 80
 
-app.use(helmet());
 app.use(compression());
 app.use(express.static('public'));
-
-app.use(flash());
 
 app.use(express.urlencoded({ extended: false}));
 
