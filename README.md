@@ -10,5 +10,6 @@ npm install
 node server.js
 ```
 
-# Reference
-
+# Requirements
+Node.js
+npm
