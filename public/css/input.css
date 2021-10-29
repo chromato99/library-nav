@@ -1,0 +1,29 @@
+* {
+  box-sizing:border-box;
+}
+#wrapper {
+  width:600px;
+  margin:0 auto;
+}
+h2 {
+  text-align:center;
+}
+form {
+  background-color:#007acc;
+  padding:30px 40px;
+  color:white;
+  text-align:center;
+}
+#item {
+  border:none; 
+  width:440px;
+  padding:10px;
+  float:left;
+  font-size:16px;
+}
+
+form::after {
+  content:"";
+  display:table;
+  clear:both;
+}
