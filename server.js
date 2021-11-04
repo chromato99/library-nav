@@ -1,6 +1,6 @@
 const express = require('express');
 const compression = require('compression');
-const front = require('./lib/front.js');
+const search_page = require('./lib/search-page.js');
 var parseurl = require('parseurl');
 
 const app = express();
@@ -14,11 +14,11 @@ app.use(express.urlencoded({ extended: false}));
 const res = require('express/lib/response');
 
 app.get('/', (req, res, next) => {
-    front.home(req, res, next);
+    search_page.home(req, res, next);
 });
 
 app.get('/search', (req, res, next) => {
-    front.search(req, res, next);
+    search_page.search(req, res, next);
 });
 
 
