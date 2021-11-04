@@ -34,3 +34,11 @@ ul li:hover {
   background-color:#007acc;
   color:white;
 }
+
+li {
+  padding: 0;
+}
+
+a {
+  display: block;
+}
