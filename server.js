@@ -21,7 +21,7 @@ app.get('/search', (req, res, next) => {
     search_page.search(req, res, next);
 });
 
-app.get('/info/:name', (req, res, next) => {
+app.get('/info/:registration', (req, res, next) => {
     search_page.info(req, res, next);
 });
 
