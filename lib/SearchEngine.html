@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Gachon Univ. Library Serach Engine</title>
+	<link rel="stylesheet" href="css/input.css">
+	<link rel="stylesheet" href="css/list.css">
+</head>
+<body>
+	<div id="wrapper">
+		<h2>Gachon Univ. Library Serach Engine</h2>
+		<form>
+			<input type="text" id="item" autofocus="true">
+			<button type="button" id="add" class="addBtn">검색</button>
+			<input type="file" onchange="loadFile(this.files[0])">
+		</form>
+		<div id="itemList"></div>
+	</div>    
+	
+	<script src="js/searchEngine.js"></script>
+	</html>
