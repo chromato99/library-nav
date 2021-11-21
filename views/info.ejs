@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Book Info</title>
+        <style>
+            table.GeneratedTable {
+              width: 960px;
+              height: 640px;
+              border-collapse: collapse;
+              border-width: 0px;
+              border-style: solid;
+              color: #000000;
+              text-align: center;
+            }
+            
+            table.GeneratedTable td {
+              border-width: 0px;
+              width: 32px;
+              height: 32px;
+              border-style: solid;
+              padding: 0px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div style="position: fixed; top:0; left :0; display: block;">
+            <img src="../public/img/library_map.jpg" style = "width:960px; height: 640px;"></img>
+            <table class="GeneratedTable" style="position: fixed; top:0; left :0; text-align: center;">
+                <tbody>
+                    <% for(var i = 0; i < 20; i++){ %>
+                        <tr>
+                            <% for(var j = 0; j < 30; j++){ %>
+                                <td>●</td>
+                            <% } %>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <div id="book_data" style="display: block;">
+            <ul>
+                <% for(var i=0; i<data.length; i++){ %>
+                    <li class = 'source' id = <%= i %> ><%= data[i].book_name %> &nbsp;&nbsp;&nbsp;&nbsp;[<%= data[i].author %> ]<br><%= data[i].classification %>  <%= data[i].book_symbol %> </li>
+                <% } %>
+            </ul>
+        </div>
+    </body>
+</html>

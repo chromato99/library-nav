@@ -1,4 +1,5 @@
 const express = require('express');
+const ejs = require('ejs');
 const compression = require('compression');
 const search_page = require('./lib/search-page.js');
 var parseurl = require('parseurl');
@@ -6,12 +7,14 @@ var parseurl = require('parseurl');
 const app = express();
 const port = 80
 
-app.use(compression());
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-app.use(express.urlencoded({ extended: false}));
+app.use(compression());
 
-const res = require('express/lib/response');
+
+app.use(express.urlencoded({ extended: false}));
 
 app.get('/', (req, res, next) => {
     search_page.home(req, res, next);
