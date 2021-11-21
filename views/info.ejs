@@ -24,9 +24,8 @@
         </style>
     </head>
     <body>
-        <div style="position: fixed; top:0; left :0; display: block;">
-            <img src="../public/img/library_map.jpg" style = "width:960px; height: 640px;"></img>
-            <table class="GeneratedTable" style="position: fixed; top:0; left :0; text-align: center;">
+        <div style="display: block;">
+            <table class="GeneratedTable" style="position: absolute; text-align: center;">
                 <tbody>
                     <% for(var i = 0; i < 20; i++){ %>
                         <tr>
@@ -37,6 +36,7 @@
                     <% } %>
                 </tbody>
             </table>
+            <img src="/img/library_map.jpg" style = "width:960px; height: 640px;"></img>
         </div>
         <div id="book_data" style="display: block;">
             <ul>
