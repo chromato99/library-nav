@@ -1,11 +1,17 @@
 const express = require('express');
 const ejs = require('ejs');
 const compression = require('compression');
-const search_page = require('./lib/search-page.js');
-var parseurl = require('parseurl');
+const sanitizeHtml = require('sanitize-html');
+const libraryInfo = require('./lib/library-nav-info.js');
+const librarySearch = require('./lib/library-nav-search.js');
 
 const app = express(); // express 모듈 초기화
 const port = 80 // 포트번호 설정
+
+const start_position = { // 지도상에서 현재 위치
+    x: 5,
+    y: 15
+}
 
 app.set('views', __dirname + '/views'); // ejs모듈 초기화
 app.set('view engine', 'ejs');
@@ -17,15 +23,17 @@ app.use(compression()); // 데이터 절약을 위한 압축 미들웨어(기능
 app.use(express.urlencoded({ extended: false})); // url 처리
 
 app.get('/', (req, res, next) => { // 기본 진입점
-    search_page.home(req, res, next);
+    response.render('index', {data: []}); // 별다른 설정 없이 기본 템플릿 생성
 });
 
 app.get('/search', (req, res, next) => { // 검색했을시 진입점
-    search_page.search(req, res, next);
+    let search_word = req.query.item || ''; // http get 방식으로 들어온 쿼리문에서 검색어 추출
+    librarySearch.searchBook(search_word, res, next);
 });
 
 app.get('/info/:registration', (req, res, next) => { // 책 정보 진입점
-    search_page.info(req, res, next);
+    let registration = req.params.registration;
+    libraryInfo.getBookInfo(registration, start_position, res, next);
 });
 
 

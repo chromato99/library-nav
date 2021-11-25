@@ -26,12 +26,12 @@
     </head>
     <body>
         <div style="display: block;">
-            <table class="GeneratedTable" style="position: absolute; text-align: center;"> <!-- 포지션 absolute로 겹쳐지게 설정-->
+            <table class="GeneratedTable" id='map_table' style="position: absolute; text-align: center;"> <!-- 포지션 absolute로 겹쳐지게 설정-->
                 <tbody>
-                    <% for(var i = 0; i < 20; i++){ %>
+                    <% for(var x = 0; x < 20; x++){ %>
                         <tr>
-                            <% for(var j = 0; j < 30; j++){ %>
-                                <td>●</td>
+                            <% for(var y = 0; y < 30; y++){ %>
+                                <td style="visibility: hidden;">●</td>
                             <% } %>
                         </tr>
                     <% } %>
@@ -41,10 +41,19 @@
         </div>
         <div id="book_data" style="display: block;"> <!-- 책 목록 생성 후 출력-->
             <ul>
-                <% for(var i=0; i<data.length; i++){ %>
-                    <li class = 'source' id = <%= i %> ><%= data[i].book_name %> &nbsp;&nbsp;&nbsp;&nbsp;[<%= data[i].author %> ]<br><%= data[i].classification %>  <%= data[i].book_symbol %> </li>
+                <% for(var i=0; i<book_data.length; i++){ %>
+                    <li class = 'source' id = <%= i %> ><%= book_data[i].book_name %> &nbsp;&nbsp;&nbsp;&nbsp;[<%= book_data[i].author %> ]<br><%= book_data[i].classification %>  <%= book_data[i].book_symbol %> </li>
                 <% } %>
             </ul>
         </div>
+        <script>
+            let path = "<%= JSON.stringify(book_path) %>";
+            path = path.replaceAll('&#34;', '\"');
+            path = JSON.parse(path);
+            var map_table = document.getElementById('map_table');
+            for(let i = 0; i < path.length; i++) {
+                map_table.rows[path[i].x].cells[path[i].y].style = 'color: red; visibility: visible;';
+            }
+        </script>
     </body>
 </html>
