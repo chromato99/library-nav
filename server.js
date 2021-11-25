@@ -23,7 +23,7 @@ app.use(compression()); // 데이터 절약을 위한 압축 미들웨어(기능
 app.use(express.urlencoded({ extended: false})); // url 처리
 
 app.get('/', (req, res, next) => { // 기본 진입점
-    response.render('index', {data: []}); // 별다른 설정 없이 기본 템플릿 생성
+    res.render('index', {data: []}); // 별다른 설정 없이 기본 템플릿 생성
 });
 
 app.get('/search', (req, res, next) => { // 검색했을시 진입점
