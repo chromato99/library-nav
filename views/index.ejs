@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta property="og:title" content="Gachon Univ. Library Search Engine | 가천대학교 도서관 검색"/>
+    <meta name="keywords" content="가천대학교">
     <meta property="og:url" content="http://chromato99.com"/>
     <meta property="og:description" content="Gachon University Library Search Engine Project. 가천대학교 도서관 검색 프로젝트"/>
     <title>Gachon Univ. Library Search Engine</title>
@@ -11,16 +12,16 @@
 </head>
 <body>
     <div id="wrapper">
-        <h2>Gachon Univ. Library Search Engine</h2>
+        <h1><a href="http://chromato99.com/">Gachon Univ. Library Search Engine</a></h1>
         
         <form action="/search" method="get">
-            <input type="text" id="item" name="item" autofocus="true">
-            <input type="submit" value="검색">
+            <input type="text" id="item" name="item" autofocus="true" placeholder="Type to search">
+            <input type="image" src="/img/searchButton.png" style="height: 34.5px; border: 2px solid black;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" alt="submit">
         </form>
         <div id="itemList">
             <ul>
                 <!--들어온 책 정보 배열을 기준으로 책 목록 생성-->
-                <% for(var i=0; i<data.length; i++){ %>
+                <% for(var i=0; i<data.length; i++) { %>
                     <li class = 'source' id = <%= i %> ><a href="/info/<%= data[i].registration_num %>"><%= data[i].book_name %>&nbsp;&nbsp;&nbsp;&nbsp;[<%= data[i].author %> ]</a></li>
                 <% } %>
             </ul>

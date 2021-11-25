@@ -1,9 +1,46 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta property="og:title" content="Gachon Univ. Library Search Engine | 가천대학교 도서관 검색"/>
+        <meta name="keywords" content="가천대학교">
+        <meta property="og:url" content="http://chromato99.com"/>
+        <meta property="og:description" content="Gachon University Library Search Engine Project. 가천대학교 도서관 검색 프로젝트"/>
         <title>Book Info</title>
         <!-- 테이블 스타일 설정 -->
         <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #F2F2F2;
+            }
+            ul{
+                margin:0;
+                padding:0;
+                list-style: none;
+            }
+            ul li{
+                position:relative;
+                padding:12px 8px 12px 40px;
+                background: #eee;
+                font-size:18px;
+                transition: 0.2s;
+            }
+            ul li:nth-child(odd) {
+                background-color:#f9f9f9;
+            }
+            .close {
+                position:absolute;
+                right:0;
+                top:0;
+                padding:12px 16px;
+                border:none;
+                background:rgba(255,255,255,0)
+            }
+            li {
+                padding: 0;
+            }
+            h1{
+                text-align: center;
+            }
             table.GeneratedTable {
                 width: 960px;
                 height: 640px;
@@ -12,6 +49,7 @@
                 border-style: solid;
                 color: #000000;
                 text-align: center;
+                position: absolute;
             }
             
             table.GeneratedTable td {
@@ -20,39 +58,79 @@
               height: 32px;
               border-style: solid;
               padding: 0px;
+              
             }
-            
+            body{
+                left: 50%;
+                position: absolute;
+                transform: translateX(-50%);
+            }
+            a {
+                text-decoration: none;
+                color: black;
+                display: block;
+            }
         </style>
     </head>
     <body>
-        <div style="display: block;">
-            <table class="GeneratedTable" id='map_table' style="position: absolute; text-align: center;"> <!-- 포지션 absolute로 겹쳐지게 설정-->
-                <tbody>
-                    <% for(var x = 0; x < 20; x++){ %>
-                        <tr>
-                            <% for(var y = 0; y < 30; y++){ %>
-                                <td style="visibility: hidden;">●</td>
-                            <% } %>
-                        </tr>
+        <div id="wrapper">
+            <h1><a href="http://chromato99.com/">Gachon Univ. Library Search Engine</a></h1>
+            <div>
+                <table class="GeneratedTable" id='map_table'> <!-- 포지션 absolute로 겹쳐지게 설정-->
+                    <tbody>
+                        <% for(var x = 0; x < 20; x++){ %>
+                            <tr>
+                                <% for(var y = 0; y < 30; y++){ %>
+                                    <td></td>
+                                <% } %>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+                <img src="/img/library_map.jpg" style = "width:960px; height: 640px;"></img>
+            </div>
+            <div id="book_data" style="display: block;"> <!-- 책 목록 생성 후 출력-->
+                <ul>
+                    <% for(var i=0; i<book_data.length; i++){ %>
+                        <li class = 'source' id = <%= i %> ><%= book_data[i].book_name %> &nbsp;&nbsp;&nbsp;&nbsp;[<%= book_data[i].author %> ]&nbsp;&nbsp;&nbsp;&nbsp;<%= book_data[i].classification %>  <%= book_data[i].book_symbol %> </li>
                     <% } %>
-                </tbody>
-            </table>
-            <img src="/img/library_map.jpg" style = "width:960px; height: 640px;"></img>
-        </div>
-        <div id="book_data" style="display: block;"> <!-- 책 목록 생성 후 출력-->
-            <ul>
-                <% for(var i=0; i<book_data.length; i++){ %>
-                    <li class = 'source' id = <%= i %> ><%= book_data[i].book_name %> &nbsp;&nbsp;&nbsp;&nbsp;[<%= book_data[i].author %> ]<br><%= book_data[i].classification %>  <%= book_data[i].book_symbol %> </li>
-                <% } %>
-            </ul>
+                </ul>
+            </div>
         </div>
         <script>
-            let path = "<%= JSON.stringify(book_path) %>";
+            let path = "<%= JSON.stringify(book_path) %>"; // 책 경로를 넘겨 받는 부분
             path = path.replaceAll('&#34;', '\"');
             path = JSON.parse(path);
-            var map_table = document.getElementById('map_table');
+            var map_table = document.getElementById('map_table'); // 맵 테이블 가져오기
             for(let i = 0; i < path.length; i++) {
-                map_table.rows[path[i].x].cells[path[i].y].style = 'color: red; visibility: visible;';
+                if(path[i].x == 5 && path[i].y == 15) { // 발자국 방향 맞춰서 출력해주는 부분
+                    if(path[i-1].x > path[i].x) {
+                    map_table.rows[path[i].x].cells[path[i].y].innerHTML = `<img src='/img/footU.png' width="32px" height="32px">`;
+                    }
+                    else if(path[i-1].x < path[i].x) {
+                        map_table.rows[path[i].x].cells[path[i].y].innerHTML = `<img src='/img/footD.png' width="32px" height="32px">`;
+                    }
+                    else if(path[i-1].y > path[i].y) {
+                        map_table.rows[path[i].x].cells[path[i].y].innerHTML = `<img src='/img/footR.png' width="32px" height="32px">`;
+                    }
+                    else if(path[i-1].y < path[i].y) {
+                        map_table.rows[path[i].x].cells[path[i].y].innerHTML = `<img src='/img/footL.png' width="32px" height="32px">`;
+                    }
+                }
+                else {
+                    if(path[i+1].x > path[i].x) {
+                    map_table.rows[path[i].x].cells[path[i].y].innerHTML = `<img src='/img/footU.png' width="32px" height="32px">`;
+                    }
+                    else if(path[i+1].x < path[i].x) {
+                        map_table.rows[path[i].x].cells[path[i].y].innerHTML = `<img src='/img/footD.png' width="32px" height="32px">`;
+                    }
+                    else if(path[i+1].y > path[i].y) {
+                        map_table.rows[path[i].x].cells[path[i].y].innerHTML = `<img src='/img/footL.png' width="32px" height="32px">`;
+                    }
+                    else if(path[i+1].y < path[i].y) {
+                        map_table.rows[path[i].x].cells[path[i].y].innerHTML = `<img src='/img/footR.png' width="32px" height="32px">`;
+                    }
+                }
             }
         </script>
     </body>

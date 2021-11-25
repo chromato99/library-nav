@@ -28,7 +28,11 @@ app.get('/', (req, res, next) => { // 기본 진입점
 
 app.get('/search', (req, res, next) => { // 검색했을시 진입점
     let search_word = req.query.item || ''; // http get 방식으로 들어온 쿼리문에서 검색어 추출
-    librarySearch.searchBook(search_word, res, next);
+    if(search_word == '') {
+        res.render('index', {data: []});
+    } else {
+        librarySearch.searchBook(search_word, res, next);
+    }
 });
 
 app.get('/info/:registration', (req, res, next) => { // 책 정보 진입점
