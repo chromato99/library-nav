@@ -11,10 +11,11 @@ Also, if you make a typo when searching for a book name, similar book names are 
 
 Currently, there is no Gachon University library DB, so the Gangnam-gu smart library DB is being used temporarily.
 
-<Example Screenshots>
-![Screenshot from 2021-11-29 02-05-57](https://user-images.githubusercontent.com/20539422/143778544-992e89fa-bf94-4768-95cb-6eff50e79bc1.png)
-![Screenshot from 2021-11-29 02-06-50](https://user-images.githubusercontent.com/20539422/143778563-52ebffca-b4f1-4bbf-9825-acbeae3dfd28.png)
-![Screenshot from 2021-11-29 02-07-13](https://user-images.githubusercontent.com/20539422/143778570-52ed967e-ff50-404f-9ef9-e6c5817a9d5a.png)
+- Example Screenshots
+![Screenshot from 2021-11-29 02-05-57](https://user-images.githubusercontent.com/20539422/143778625-0500e8e7-f3de-4149-b7f9-4acc3b135dc6.png)
+![Screenshot from 2021-11-29 02-06-50](https://user-images.githubusercontent.com/20539422/143778641-0750cd6d-509e-481c-8f27-75ae95e8fb26.png)
+![Screenshot from 2021-11-29 02-07-13](https://user-images.githubusercontent.com/20539422/143778648-3e728bcf-774a-4a42-8b09-1c0d84807b0c.png)
+
   
 # Run on localhost
 1) Download DB data https://www.data.go.kr/data/15071671/fileData.do 
