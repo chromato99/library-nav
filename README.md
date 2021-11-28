@@ -17,8 +17,8 @@ npm install
 node server.js
 ```
 
-#Tech Stack
-[FE] HTML / CSS / Javascript
-[BE] Node.js
-[Database] MySql
+# Tech Stack
+[FE] HTML / CSS / Javascript<br>
+[BE] Node.js<br>
+[Database] MySql<br>
 Book DB from https://www.data.go.kr/data/15071671/fileData.do 
