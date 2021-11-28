@@ -12,10 +12,10 @@ Also, if you make a typo when searching for a book name, similar book names are 
 Currently, there is no Gachon University library DB, so the Gangnam-gu smart library DB is being used temporarily.
 
 <Example Screenshots>
-![Screenshot from 2021-11-29 02-05-57](https://user-images.githubusercontent.com/20539422/143778363-8e89e173-0a47-4c1f-ba5c-cae9a1b979e5.png)
-![Screenshot from 2021-11-29 02-06-50](https://user-images.githubusercontent.com/20539422/143778382-c46bdba5-11b5-46a6-b2e3-d452f7b1b7ca.png)
-![Screenshot from 2021-11-29 02-07-13](https://user-images.githubusercontent.com/20539422/143778388-95ede539-f26e-4951-9ca1-377f99a8be05.png)
-
+![Screenshot from 2021-11-29 02-05-57](https://user-images.githubusercontent.com/20539422/143778544-992e89fa-bf94-4768-95cb-6eff50e79bc1.png)
+![Screenshot from 2021-11-29 02-06-50](https://user-images.githubusercontent.com/20539422/143778563-52ebffca-b4f1-4bbf-9825-acbeae3dfd28.png)
+![Screenshot from 2021-11-29 02-07-13](https://user-images.githubusercontent.com/20539422/143778570-52ed967e-ff50-404f-9ef9-e6c5817a9d5a.png)
+  
 # Run on localhost
 1) Download DB data https://www.data.go.kr/data/15071671/fileData.do 
 2) Set MySQL server as you wnat and set db.template.js to db.js with your setting.
