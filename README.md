@@ -19,7 +19,9 @@ Currently, there is no Gachon University library DB, so the Gangnam-gu smart lib
   
 # Run on localhost
 1) Download DB data from https://www.data.go.kr/data/15071671/fileData.do or your own DB.
-2) Set MySQL server as you wnat and set db.template.js to db.js with your setting.
+2) Set MySQL server and table as below and set db.template.js to db.js with your setting.
+![Screenshot from 2021-11-29 13-28-31](https://user-images.githubusercontent.com/20539422/143809094-e616ca9a-2276-4fae-a8ad-b5289775933a.png)
+
 3) Run Server with Node.js
 ```
 cd <project directory>
