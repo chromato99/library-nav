@@ -5,29 +5,29 @@ const sanitizeHtml = require('sanitize-html');
 const libraryInfo = require('./lib/library-nav-info.js');
 const librarySearch = require('./lib/library-nav-search.js');
 
-const app = express(); // express 모듈 초기화
-const port = 80 // 포트번호 설정
+const app = express(); // Initialize the express module
+const port = 80 // Port number setting
 
-const start_position = { // 지도상에서 현재 위치
+const start_position = { // Starting location on the map
     x: 5,
     y: 15
 }
 
-app.set('views', __dirname + '/views'); // ejs모듈 초기화
-app.set('view engine', 'ejs');
-app.use(express.static('public')); // 정적 파일 위치 지정
+app.set('views', __dirname + '/views'); // Initialize ejs moudule location
+app.set('view engine', 'ejs'); // Initiallize ejs render engine
+app.use(express.static('public')); // Initialize static file location
 
-app.use(compression()); // 데이터 절약을 위한 압축 미들웨어(기능적으로 무시해도 됨)
+app.use(compression()); // Compression middleware to save data (functionally negligible)
 
 
-app.use(express.urlencoded({ extended: false})); // url 처리
+app.use(express.urlencoded({ extended: false})); // url encoding
 
-app.get('/', (req, res, next) => { // 기본 진입점
-    res.render('index', {data: []}); // 별다른 설정 없이 기본 템플릿 생성
+app.get('/', (req, res, next) => { // Default entry point
+    res.render('index', {data: []}); // Create a basic template without any settings
 });
 
-app.get('/search', (req, res, next) => { // 검색했을시 진입점
-    let search_word = req.query.item || ''; // http get 방식으로 들어온 쿼리문에서 검색어 추출
+app.get('/search', (req, res, next) => { // Entry point with searching
+    let search_word = req.query.item || ''; // Extracts search word from query statements entered through http get method
     if(search_word == '') {
         res.render('index', {data: []});
     } else {
@@ -35,19 +35,19 @@ app.get('/search', (req, res, next) => { // 검색했을시 진입점
     }
 });
 
-app.get('/info/:registration', (req, res, next) => { // 책 정보 진입점
+app.get('/info/:registration', (req, res, next) => { // Book information entry point
     let registration = req.params.registration;
     libraryInfo.getBookInfo(registration, start_position, res, next);
 });
 
 
-app.use((req, res, next) => { // 잘못된 접근일시
+app.use((req, res, next) => { // wrong access
     res.status(404).send('404 error');
 });
-app.use((err, req, res, next) => { // 페이지 깨짐 오류 처리
+app.use((err, req, res, next) => { // Page broken error
     console.log(err);
     res.status(500).send('Broken Page');
 });
-app.listen(port, () => { // 포트 오픈
+app.listen(port, () => { // Opening port
     console.log(`Example app listening at http://localhost:${port}`);
 });

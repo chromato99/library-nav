@@ -20,7 +20,7 @@
         </form>
         <div id="itemList">
             <ul>
-                <!--들어온 책 정보 배열을 기준으로 책 목록 생성-->
+                <!--Create a list of books based on the incoming book information array-->
                 <% for(var i=0; i<data.length; i++) { %>
                     <li class = 'source' id = <%= i %> ><a href="/info/<%= data[i].registration_num %>"><%= data[i].book_name %>&nbsp;&nbsp;&nbsp;&nbsp;[<%= data[i].author %> ]</a></li>
                 <% } %>

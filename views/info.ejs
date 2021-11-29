@@ -6,7 +6,7 @@
         <meta property="og:url" content="http://chromato99.com"/>
         <meta property="og:description" content="Gachon University Library Search Engine Project. 가천대학교 도서관 검색 프로젝트"/>
         <title>Book Info</title>
-        <!-- 테이블 스타일 설정 -->
+        <!-- CSS -->
         <style>
             body {
                 font-family: Arial, Helvetica, sans-serif;
@@ -76,7 +76,7 @@
         <div id="wrapper">
             <h1><a href="http://chromato99.com/">Gachon Univ. Library Search Engine</a></h1>
             <div>
-                <table class="GeneratedTable" id='map_table'> <!-- 포지션 absolute로 겹쳐지게 설정-->
+                <table class="GeneratedTable" id='map_table'> <!-- Set to overlap the table with position absolute-->
                     <tbody>
                         <% for(var x = 0; x < 20; x++){ %>
                             <tr>
@@ -89,7 +89,7 @@
                 </table>
                 <img src="/img/library_map.jpg" style = "width:960px; height: 640px;"></img>
             </div>
-            <div id="book_data" style="display: block;"> <!-- 책 목록 생성 후 출력-->
+            <div id="book_data" style="display: block;"> <!-- Output after creating a book list-->
                 <ul>
                     <% for(var i=0; i<book_data.length; i++){ %>
                         <li class = 'source' id = <%= i %> ><%= book_data[i].book_name %> &nbsp;&nbsp;&nbsp;&nbsp;[<%= book_data[i].author %> ]&nbsp;&nbsp;&nbsp;&nbsp;<%= book_data[i].classification %>  <%= book_data[i].book_symbol %> </li>
@@ -98,12 +98,12 @@
             </div>
         </div>
         <script>
-            let path = "<%= JSON.stringify(book_path) %>"; // 책 경로를 넘겨 받는 부분
+            let path = "<%= JSON.stringify(book_path) %>"; // The part that receives the book path
             path = path.replaceAll('&#34;', '\"');
             path = JSON.parse(path);
-            var map_table = document.getElementById('map_table'); // 맵 테이블 가져오기
+            var map_table = document.getElementById('map_table'); // Get map table
             for(let i = 0; i < path.length; i++) {
-                if(path[i].x == 5 && path[i].y == 15) { // 발자국 방향 맞춰서 출력해주는 부분
+                if(path[i].x == 5 && path[i].y == 15) { // The part that prints the footprint according to the direction
                     if(path[i-1].x > path[i].x) {
                     map_table.rows[path[i].x].cells[path[i].y].innerHTML = `<img src='/img/footU.png' width="32px" height="32px">`;
                     }
