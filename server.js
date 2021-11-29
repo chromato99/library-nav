@@ -2,8 +2,8 @@ const express = require('express');
 const ejs = require('ejs');
 const compression = require('compression');
 const sanitizeHtml = require('sanitize-html');
-const libraryInfo = require('./lib/library-nav-info.js');
-const librarySearch = require('./lib/library-nav-search.js');
+const libraryInfo = require('./src/library-nav-info.js');
+const librarySearch = require('./src/library-nav-search.js');
 
 const app = express(); // Initialize the express module
 const port = 80 // Port number setting
