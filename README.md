@@ -11,7 +11,7 @@ Provides a function with 'Dijkstra' algorithm to inform you of the shortest path
 Also, if you make a typo when searching for a book name, similar book names are automatically suggested by using 'Edit Distance' algorithm.
 
 *Currently, there is no Gachon University library DB, so the Gangnam-gu smart library DB is being used temporarily.<br>
-&nbsp;(Because the Gangnam-gu smart library DB is not complete, some data may work unstable.)
+&nbsp;(But the Gangnam-gu smart library DB is not complete, so some data may work unstable.)
 
 - Example Screenshots
 ![Screenshot from 2021-11-29 02-05-57](https://user-images.githubusercontent.com/20539422/143778625-0500e8e7-f3de-4149-b7f9-4acc3b135dc6.png)
