@@ -24,7 +24,11 @@ Also, if you make a typo when searching for a book name, similar book names are 
 2) Set MySQL server and table structure as below. (If you want to use different table structure, you need to edit source code)
 ![Screenshot from 2021-11-29 13-28-31](https://user-images.githubusercontent.com/20539422/143809094-e616ca9a-2276-4fae-a8ad-b5289775933a.png)
 
-3) Rename db.template.js to db.js and set with your db configuration.
+3) Import Database as below.
+```
+LOAD DATA LOCAL INFILE '<data file directory>/library.csv' INTO TABLE book FIELDS TERMINATED BY ',';
+```
+4) Rename db.template.js to db.js and set with your db configuration.
 ```javascript
 var db = mysql.createConnection({
     host:'example.com',
@@ -33,10 +37,7 @@ var db = mysql.createConnection({
     database:'library'
 });
 ```
-5) Import Database as below.
-```
-LOAD DATA LOCAL INFILE '<data file directory>/library.csv' INTO TABLE book FIELDS TERMINATED BY ',';
-```
+
 5) Run Server with Node.js
 ```
 cd <project directory>
