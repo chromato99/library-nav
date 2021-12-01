@@ -4,13 +4,14 @@ This is a service for the experimental implementation of the Edit Distance Algor
 
 Page for testing : http://chromato99.com
 
+# Description
 This is a web service to shorten the search time to locate a book when using the Gachon University library.
 
 Provides a function with 'Dijkstra' algorithm to inform you of the shortest path from the current location to the location of the book when searching for a book name. 
 Also, if you make a typo when searching for a book name, similar book names are automatically suggested by using 'Edit Distance' algorithm.
 
-Currently, there is no Gachon University library DB, so the Gangnam-gu smart library DB is being used temporarily.<br>
-(Because the Gangnam-gu smart library DB is not complete, some data may work unstable.)
+*Currently, there is no Gachon University library DB, so the Gangnam-gu smart library DB is being used temporarily.<br>
+&nbsp;(Because the Gangnam-gu smart library DB is not complete, some data may work unstable.)
 
 - Example Screenshots
 ![Screenshot from 2021-11-29 02-05-57](https://user-images.githubusercontent.com/20539422/143778625-0500e8e7-f3de-4149-b7f9-4acc3b135dc6.png)
