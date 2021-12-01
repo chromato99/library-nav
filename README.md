@@ -23,7 +23,7 @@ Currently, there is no Gachon University library DB, so the Gangnam-gu smart lib
 2) Set MySQL server and table structure as below. (If you want to use other table structure, you need to edit source code)
 ![Screenshot from 2021-11-29 13-28-31](https://user-images.githubusercontent.com/20539422/143809094-e616ca9a-2276-4fae-a8ad-b5289775933a.png)
 
-3) Set db.template.js to db.js with your db configuration.
+3) Rename db.template.js to db.js and set with your db configuration.
 ```javascript
 var db = mysql.createConnection({
     host:'example.com',
