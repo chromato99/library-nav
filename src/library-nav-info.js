@@ -79,11 +79,11 @@ function getPath(dest, path_table) {
 }
 
 exports.getBookInfo = function(registration, start_pos, response, next) {
-    let data = db.query('SELECT * FROM book WHERE book_name=(SELECT book_name FROM book WHERE registration_num=?) and author=(SELECT author FROM book WHERE registration_num=?)', [registration, registration], (err, data) => { // Request all duplicate books with the same title and same author
+    let data = db.query('SELECT * FROM book WHERE book_name=(SELECT book_name FROM book WHERE registration_num=? LIMIT 1) and author=(SELECT author FROM book WHERE registration_num=? LIMIT 1)', [registration, registration], (err, data) => { // Request all duplicate books with the same title and same author
         if(err) {return err;}
         //console.log(data);
         if(data.length == 0 || parseInt(data[0].classification, 10) >= 1000) { // If there is no book information, an error message is displayed.
-            response.send('No data!!\n Wrong Access');
+            response.send('Database Error!!\n No such registration');
         }
         else {
             let path_table = getPathTable();
