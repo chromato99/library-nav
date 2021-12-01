@@ -21,7 +21,7 @@ Also, if you make a typo when searching for a book name, similar book names are 
   
 # Run on localhost
 1) Download DB data from https://www.data.go.kr/data/15071671/fileData.do or your own DB.
-2) Set MySQL server and table structure as below. (If you want to use other table structure, you need to edit source code)
+2) Set MySQL server and table structure as below. (If you want to use different table structure, you need to edit source code)
 ![Screenshot from 2021-11-29 13-28-31](https://user-images.githubusercontent.com/20539422/143809094-e616ca9a-2276-4fae-a8ad-b5289775933a.png)
 
 3) Rename db.template.js to db.js and set with your db configuration.
