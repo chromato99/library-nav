@@ -6,7 +6,7 @@ Page for testing : http://chromato99.com
 
 This is a web service to shorten the search time to locate a book when using the Gachon University library.
 
-Provides a function with 'Dijkstra' algorithm to inform you of the shortest path from the current location to the location of the book when searching for a book name. <br>
+Provides a function with 'Dijkstra' algorithm to inform you of the shortest path from the current location to the location of the book when searching for a book name. 
 Also, if you make a typo when searching for a book name, similar book names are automatically suggested by using 'Edit Distance' algorithm.
 
 Currently, there is no Gachon University library DB, so the Gangnam-gu smart library DB is being used temporarily.<br>
