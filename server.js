@@ -23,12 +23,14 @@ app.use(compression()); // Compression middleware to save data (functionally neg
 app.use(express.urlencoded({ extended: false})); // url encoding
 
 app.get('/', (req, res, next) => { // Default entry point
+    console.log('From : ', req.ip);
     console.log(req.headers);
     res.render('index', {data: []}); // Create a basic template without any settings
 });
 
 app.get('/search', (req, res, next) => { // Entry point with searching
     let search_word = req.query.item || ''; // Extracts search word from query statements entered through http get method
+    console.log('From : ', req.ip);
     console.log(req.headers);
     if(search_word == '') {
         res.render('index', {data: []});
@@ -39,6 +41,7 @@ app.get('/search', (req, res, next) => { // Entry point with searching
 
 app.get('/info/:registration', (req, res, next) => { // Book information entry point
     let registration = req.params.registration;
+    console.log('From : ', req.ip);
     console.log(req.headers);
     libraryInfo.getBookInfo(registration, start_position, res, next);
 });
