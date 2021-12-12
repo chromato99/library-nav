@@ -14,12 +14,12 @@ Also, if you make a typo when searching for a book name, similar book names are 
 &nbsp;(But the Gangnam-gu smart library DB is not complete, so some data may work unstable.)
 
 - Example Screenshots
-<img src="https://user-images.githubusercontent.com/20539422/143778625-0500e8e7-f3de-4149-b7f9-4acc3b135dc6.png"  width="65%" height="65%"/>
-<img src="https://user-images.githubusercontent.com/20539422/143778641-0750cd6d-509e-481c-8f27-75ae95e8fb26.png"  width="65%" height="65%"/>
-<img src="https://user-images.githubusercontent.com/20539422/143778648-3e728bcf-774a-4a42-8b09-1c0d84807b0c.png"  width="65%" height="65%"/>
+<img src="https://user-images.githubusercontent.com/20539422/143778625-0500e8e7-f3de-4149-b7f9-4acc3b135dc6.png"  width="70%" height="70%"/>
+<img src="https://user-images.githubusercontent.com/20539422/143778641-0750cd6d-509e-481c-8f27-75ae95e8fb26.png"  width="70%" height="70%"/>
+<img src="https://user-images.githubusercontent.com/20539422/143778648-3e728bcf-774a-4a42-8b09-1c0d84807b0c.png"  width="70%" height="70%"/>
 
 # Project Structure
-<img src="https://user-images.githubusercontent.com/20539422/145703747-c5aaf101-ecaa-442a-88e7-04a99707da77.png"  width="30%" height="30%"/>
+<img src="https://user-images.githubusercontent.com/20539422/145703747-c5aaf101-ecaa-442a-88e7-04a99707da77.png"  width="35%" height="35%"/>
 
 server.js : Main execution of this service
 
@@ -41,7 +41,7 @@ server.js : Main execution of this service
 # Run on localhost
 1) Download DB data from https://www.data.go.kr/data/15071671/fileData.do or your own DB.
 2) Set MySQL server and table structure as below. (If you want to use different table structure, you need to edit source code)
-<img src="https://user-images.githubusercontent.com/20539422/143809094-e616ca9a-2276-4fae-a8ad-b5289775933a.png"  width="60%" height="60%"/>
+<img src="https://user-images.githubusercontent.com/20539422/143809094-e616ca9a-2276-4fae-a8ad-b5289775933a.png"  width="65%" height="65%"/>
 
 3) Import Database as below.
 ```
