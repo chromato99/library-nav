@@ -4,9 +4,12 @@ const compression = require('compression');
 const sanitizeHtml = require('sanitize-html');
 const libraryInfo = require('./src/library-nav-info.js');
 const librarySearch = require('./src/library-nav-search.js');
+const mysql = require('mysql');
+const db_config = require('./src/db-config.js');
 
 const app = express(); // Initialize the express module
 const port = 80 // Port number setting
+
 
 const start_position = { // Starting location on the map
     x: 5,
@@ -35,7 +38,9 @@ app.get('/search', (req, res, next) => { // Entry point with searching
     if(search_word == '') {
         res.render('index', {data: []});
     } else {
-        librarySearch.searchBook(search_word, res, next);
+        let db = mysql.createConnection(db_config);
+        db.connect();
+        librarySearch.searchBook(search_word, res, db, next);
     }
 });
 
@@ -43,7 +48,9 @@ app.get('/info/:registration', (req, res, next) => { // Book information entry p
     let registration = req.params.registration;
     console.log('From : ', req.ip);
     console.log(req.headers);
-    libraryInfo.getBookInfo(registration, start_position, res, next);
+    let db = mysql.createConnection(db_config);
+    db.connect();
+    libraryInfo.getBookInfo(registration, start_position, res, db, next);
 });
 
 

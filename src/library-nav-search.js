@@ -1,5 +1,3 @@
-const db = require('./db.js');
-
 function editDistance(s,t) {  // edit distance function to caculate similarity of word
     let m = s.length;
     let n = t.length;
@@ -29,7 +27,7 @@ function editDistance(s,t) {  // edit distance function to caculate similarity o
     return d[m][n];
 }
 
-exports.searchBook = function (search_word, response, next) {
+exports.searchBook = function (search_word, response, db, next) {
     
     let data = db.query('SELECT * FROM book', (err, data) => { // Request all book database to db
         if(err) {return err;}

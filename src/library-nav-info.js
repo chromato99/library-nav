@@ -1,5 +1,4 @@
 const library_map_node = require('./library-map-node.js');
-const db = require('./db.js');
 
 function getPathTable() { // Initialze path table for storing temporary data when running dijkstra algorithm
     let path_table = new Array(20);
@@ -78,7 +77,7 @@ function getPath(dest, path_table) {
     return path;
 }
 
-exports.getBookInfo = function(registration, start_pos, response, next) {
+exports.getBookInfo = function(registration, start_pos, response, db, next) {
     let data = db.query('SELECT BOOK.* FROM book AS BOOK, (SELECT * FROM book WHERE registration_num=? LIMIT 1) AS SEARCH_RESULT WHERE BOOK.book_name=SEARCH_RESULT.book_name and BOOK.author=SEARCH_RESULT.author;', registration, (err, data) => { // Request all duplicate books with the same title and same author
         if(err) {return err;}
         //console.log(data);
