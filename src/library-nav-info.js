@@ -1,4 +1,5 @@
-const library_map_node = require('./library-map-node.js');
+let fs = require("fs");
+let library_map_node = JSON.parse(fs.readFileSync("./src/library-map-node.json", "utf-8")).map_node;
 
 function getPathTable() { // Initialze path table for storing temporary data when running dijkstra algorithm
     let path_table = new Array(20);
