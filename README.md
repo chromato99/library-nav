@@ -1,8 +1,8 @@
 # library-nav
-2021 Gachon univeristy algorithm class term project<br>
+2021 Gachon university algorithm class term project<br>
 This is a service for the experimental implementation of the Edit Distance Algorithm and the Dijkstra Algorithm.
 
-Page for testing : http://chromato99.com
+Page for testing : http://test.chromato99.com (Currently Closed)
 
 # Description
 This is a web service to shorten the search time to locate a book when using the Gachon University library.
