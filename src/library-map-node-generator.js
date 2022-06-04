@@ -1,3 +1,4 @@
+let fs = require("fs");
 let node = new Array(20);
 
 // From here to line 58, the code that initializes each node
@@ -142,4 +143,8 @@ for(let i = 0; i < 12; i++) {
     node[17][17+i].book_num_end = 911 + (i*8);
 }
 
-module.exports = node;
+let json_node = {
+    map_node: node
+}
+
+fs.writeFileSync("./library-map-node.json", JSON.stringify(json_node));
