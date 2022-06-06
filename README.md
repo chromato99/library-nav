@@ -11,7 +11,8 @@ Provides a function with 'Dijkstra' algorithm to inform you of the shortest path
 Also, if you make a typo when searching for a book name, similar book names are automatically suggested by using 'Edit Distance' algorithm.
 
 *Currently, there is no Gachon University library DB, so the Gangnam-gu smart library DB is being used temporarily.<br>
-&nbsp;(But the Gangnam-gu smart library DB is not complete, so some data may work unstable.)
+&nbsp;(But the Gangnam-gu smart library DB is not complete, so some data may work unstable.)<br>
+*The library map is a virtual map, not a real library.
 
 - Example Screenshots
 <img src="https://user-images.githubusercontent.com/20539422/143778625-0500e8e7-f3de-4149-b7f9-4acc3b135dc6.png"  width="70%" height="70%"/>
@@ -19,7 +20,7 @@ Also, if you make a typo when searching for a book name, similar book names are 
 <img src="https://user-images.githubusercontent.com/20539422/143778648-3e728bcf-774a-4a42-8b09-1c0d84807b0c.png"  width="70%" height="70%"/>
 
 # Project Structure
-<img src="https://user-images.githubusercontent.com/20539422/145703747-c5aaf101-ecaa-442a-88e7-04a99707da77.png"  width="35%" height="35%"/>
+<img src="https://user-images.githubusercontent.com/20539422/172134059-57766715-f45c-4198-96bb-cdb9d5736e30.png"  width="35%" height="35%"/>
 
 server.js : Main execution of this service
 
@@ -29,10 +30,12 @@ server.js : Main execution of this service
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;library_map.jpg : Image of library map.
 
 /src : Source code of library-nav modules.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;library-nav-search.js : A collection of functions used for searching library books.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;db.template.js : Configuration file of DB connection (Should be rename to db-config.js)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;library-map-node-generator.js : library-map-node.json generating code.(Generate json file by `node library-map-node-generator.js` command)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;library-map-node.json : Json file that store library map nodes.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;library-nav-info.js : A collection of functions that give information about a book and its location.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;library-map-node.js : Data of library map.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;db.template.js : Configuration file of DB connection (Should be rename to db-config.js)
+&nbsp;&nbsp;&nbsp;&nbsp;library-nav-search.js : A collection of functions used for searching library books.
+
 
 /views : Frontend ejs template directory.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;index.ejs : First main screen and search result output.<br>
