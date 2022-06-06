@@ -31,7 +31,8 @@ server.js : Main execution of this service
 
 /src : Source code of library-nav modules.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;db.template.js : Configuration file of DB connection (Should be rename to db-config.js)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;library-map-node-generator.js : library-map-node.json generating code.(Generate json file by `node library-map-node-generator.js` command)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;library-map-node-generator.js : library-map-node.json generating code.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Generate json file by `node library-map-node-generator.js` command)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;library-map-node.json : Json file that store library map nodes.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;library-nav-info.js : A collection of functions that give information about a book and its location.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;library-nav-search.js : A collection of functions used for searching library books.
