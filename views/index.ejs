@@ -6,17 +6,26 @@
     <meta name="keywords" content="가천대학교">
     <meta property="og:url" content="http://chromato99.com"/>
     <meta property="og:description" content="Gachon University Library Search Engine Project. 가천대학교 도서관 검색 프로젝트"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gachon Univ. Library Search Engine</title>
     <link rel="stylesheet" href="/css/input.css">
     <link rel="stylesheet" href="/css/list.css">
 </head>
 <body>
     <div id="wrapper">
-        <h1><a href="http://chromato99.com/">Gachon Univ. Library Search Engine</a></h1>
+        <h1><a href="http://test.chromato99.com/">Gachon Univ. Library Search Engine</a></h1>
         
         <form action="/search" method="get">
-            <input type="text" id="item" name="item" autofocus="true" placeholder="Type to search">
-            <input type="image" src="/img/searchButton.png" style="height: 34.5px; border: 2px solid black;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" alt="submit">
+            <table id="wrapper">
+                <tr id="wrapper">
+                    <td style="width:93%; height: 45px; padding: 0;">
+                    <input type="text" id="item" name="item" autofocus="true" placeholder="Type to search">
+                    </td>
+                    <td style="padding: 0; height: 45px;">
+                    <input type="image" src="/img/searchButton.png" style="height: 35px; border: 2px solid black; border-radius: 7px; vertical-align: middle;" alt="submit">
+                    </td>
+                </tr>
+            </table>
         </form>
         <div id="itemList">
             <ul>

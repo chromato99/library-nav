@@ -5,7 +5,8 @@ body {
 #wrapper {
   width: 100%;
   max-width:900px;
-  margin:0 auto;
+  margin: 0 auto;
+  padding: 0;
 }
 
 h1 {
@@ -13,20 +14,18 @@ h1 {
 }
 form {
   background-color:#007acc;
-  padding:30px 40px;
+  padding: 20px 20px;
   color:white;
   text-align:center;
 }
 #item {
+  width:inherit;
   border:none; 
-  width:91%;
   padding:10px;
-  float:left;
   font-size:16px;
 }
 
 form::after {
   content:"";
-  display:table;
   clear:both;
 }
