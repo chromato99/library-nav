@@ -1,7 +1,5 @@
 const express = require('express');
-const ejs = require('ejs');
 const compression = require('compression');
-const sanitizeHtml = require('sanitize-html');
 const libraryInfo = require('./src/library-nav-info.js');
 const librarySearch = require('./src/library-nav-search.js');
 const mysql = require('mysql');
@@ -25,7 +23,7 @@ app.use(compression()); // Compression middleware to save data (functionally neg
 
 app.use(express.urlencoded({ extended: false})); // url encoding
 
-app.get('/', (req, res, next) => { // Default entry point
+app.get('/', (req, res) => { // Default entry point
     console.log('From : ', req.ip);
     console.log(req.headers);
     res.render('index', {data: []}); // Create a basic template without any settings
@@ -54,10 +52,10 @@ app.get('/info/:registration', (req, res, next) => { // Book information entry p
 });
 
 
-app.use((req, res, next) => { // wrong access
+app.use((req, res) => { // wrong access
     res.status(404).send('404 error');
 });
-app.use((err, req, res, next) => { // Page broken error
+app.use((err, req, res) => { // Page broken error
     console.log(err);
     res.status(500).send('Broken Page');
 });

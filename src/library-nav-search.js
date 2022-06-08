@@ -27,9 +27,9 @@ function editDistance(s,t) {  // edit distance function to caculate similarity o
     return d[m][n];
 }
 
-exports.searchBook = function (search_word, response, db, next) {
+exports.searchBook = function (search_word, response, db) {
     
-    let data = db.query('SELECT * FROM book', (err, data) => { // Request all book database to db
+    db.query('SELECT * FROM book', (err, data) => { // Request all book database to db
         if(err) {return err;}
         let resultList = new Array();
         for(let i=0; i < data.length; i++) { // Repeat execution as long as the input data length
